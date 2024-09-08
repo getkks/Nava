@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="Outlook/Outlook.fs" />
+    <Compile Include="Excel/ExcelApplication.fs" />
+    <Compile Include="Excel/Workbook.fs" />
+    <Compile Include="Excel/Worksheet.fs" />
+    <Compile Include="Excel/ListObject.fs" />
+    <Compile Include="Extensions/CsvPackage.fs" />
+  </ItemGroup>
+  <Target Name="OfficeReferenceFiles" BeforeTargets="PreBuildEvent">
+        <Unzip SourceFiles="./Office.zip" DestinationFolder="$(ArtifactsPath)\References" OverwriteReadOnlyFiles="true" />
+    </Target>
+    <ItemGroup>
+        <Reference Include="Microsoft.Office.Interop.Excel">
+            <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Microsoft.Office.Interop.Excel.dll</HintPath>
+            <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Office.Interop.Outlook">
+            <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Microsoft.Office.Interop.Outlook.dll</HintPath>
+            <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Office.Interop.Word">
+            <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Microsoft.Office.Interop.Word.dll</HintPath>
+            <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Vbe.Interop">
+            <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Microsoft.Vbe.Interop.dll</HintPath>
+            <Private>True</Private>
+        </Reference>
+        <Reference Include="office">
+            <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Office.dll</HintPath>
+            <Private>True</Private>
+        </Reference>
+    </ItemGroup>
+  <!-- <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>./Office/Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook">
+      <HintPath>./Office/Microsoft.Office.Interop.Outlook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word">
+      <HintPath>./Office/Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <HintPath>./Office/Microsoft.Vbe.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="office">
+      <HintPath>./Office/Office.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup> -->
+  <ItemGroup>
+    <ProjectReference Include="..\Nava.Runtime\Nava.Runtime.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

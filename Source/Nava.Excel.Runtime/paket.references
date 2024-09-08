@@ -1,0 +1,4 @@
+group Nava.Excel.Runtime
+File: Ole2Package.cs Packaging
+File: Ole2Package+Ole2Entry.cs Packaging
+File: Ole2Package+Ole2Stream.cs Packaging

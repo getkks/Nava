@@ -1,0 +1,6 @@
+group Tests
+FsCheck.Xunit
+FsUnit.xUnit
+coverlet.collector
+Microsoft.NET.Test.Sdk
+xunit.runner.visualstudio

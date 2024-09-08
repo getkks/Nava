@@ -1,0 +1,63 @@
+<Project>	
+    <PropertyGroup>
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('Linux'))">net9.0</TargetFramework>
+		<TargetFramework Condition="$([MSBuild]::IsOSPlatform('Windows'))">net9.0</TargetFramework>
+        <UseArtifactsOutput>true</UseArtifactsOutput>
+        <ArtifactsPath>$([System.IO.Path]::Combine($([System.IO.Path]::GetTempPath()), Artifacts))</ArtifactsPath>
+        <!-- <ArtifactsPath>$(MSBuildThisFileDirectory)Artifacts</ArtifactsPath> -->
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GarbageCollectionAdaptationMode>1</GarbageCollectionAdaptationMode> 
+		<ServerGarbageCollection>true</ServerGarbageCollection>
+        <LangVersion>preview</LangVersion>
+        <TransformOnBuild>true</TransformOnBuild>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <TieredCompilation>true</TieredCompilation>
+        <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
+        <TieredCompilationQuickJitForLoops>true</TieredCompilationQuickJitForLoops>
+        <TieredPGO>true</TieredPGO>
+        <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+        <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
+        <Tailcalls>true</Tailcalls>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(MSBuildProjectExtension)'=='.fsproj'">
+        <OtherFlags>$(OtherFlags) --utf8output --nologo --consolecolors</OtherFlags>
+        <!-- Improve compiler performance -->
+        <OtherFlags>$(OtherFlags) --reflectionfree --test:GraphBasedChecking --test:ParallelOptimization --test:ParallelIlxGen</OtherFlags>
+        <!-- Disable Compiler warnings -->
+        <OtherFlags>$(OtherFlags) --warnon:3390,3560</OtherFlags>
+        <NoWarn>0760,3391,9</NoWarn>
+        <WarningsAsErrors>3560;3390;$(WarningsAsErrors)</WarningsAsErrors>
+        <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(LiteVersion)'=='true' and '$(MSBuildProjectExtension)'=='.fsproj'">
+        <!-- strip F# compiler sepcific data -->
+        <OtherFlags>$(OtherFlags) --nooptimizationdata --nointerfacedata</OtherFlags>
+    </PropertyGroup>
+    <!-- <ItemGroup Condition="'$(MSBuildProjectExtension)'=='.fsproj'"> -->
+	<!-- <ItemGroup>
+        <PackageReference Include="InfoOf.Fody" Version="*" PrivateAssets="All" />
+        <PackageReference Include="InlineIL.Fody" Version="*" PrivateAssets="All" />
+        <PackageReference Include="LocalsInit.Fody" Version="*" PrivateAssets="All" />
+    </ItemGroup> -->
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+        <DebugType>portable</DebugType>
+        <DefineConstants>DEBUG</DefineConstants>
+		<DebugSymbols>true</DebugSymbols>	
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <DebugType>none</DebugType>
+		<!-- <DebugSymbols>true</DebugSymbols>
+		<PlatformTarget>AnyCPU</PlatformTarget> -->
+    </PropertyGroup>
+    <PropertyGroup>
+        <WeaverConfiguration>
+            <Weavers>
+                <LocalsInit Default="false" />
+                <InfoOf />
+                <InlineIL />
+            </Weavers>
+        </WeaverConfiguration>
+    </PropertyGroup>
+</Project>

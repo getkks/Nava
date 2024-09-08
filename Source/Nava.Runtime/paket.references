@@ -1,0 +1,11 @@
+group Common
+FsToolkit.ErrorHandling
+StringBuffer
+Zio
+FastHashes
+group Fody
+InlineIL.Fody
+LocalsInit.Fody
+group Nava.Runtime
+Vanara.PInvoke.Ole
+Vanara.PInvoke.User32

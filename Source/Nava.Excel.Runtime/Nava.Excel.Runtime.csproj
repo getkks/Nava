@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="..\..\paket-files\nava.excel.runtime\MarkPflug\Sylvan.Data.Excel\source\Sylvan.Data.Excel\Packaging\Ole2Package.cs">
+      <Paket>True</Paket>
+      <Link>Packaging/Ole2Package.cs</Link>
+    </Compile>
+    <Compile Include="..\..\paket-files\nava.excel.runtime\MarkPflug\Sylvan.Data.Excel\source\Sylvan.Data.Excel\Packaging\Ole2Package+Ole2Entry.cs">
+      <Paket>True</Paket>
+      <Link>Packaging/Ole2Package+Ole2Entry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\paket-files\nava.excel.runtime\MarkPflug\Sylvan.Data.Excel\source\Sylvan.Data.Excel\Packaging\Ole2Package+Ole2Stream.cs">
+      <Paket>True</Paket>
+      <Link>Packaging/Ole2Package+Ole2Stream.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

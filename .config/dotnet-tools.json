@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "fantomas": {
+      "version": "6.3.10",
+      "commands": [
+        "fantomas"
+      ],
+      "rollForward": false
+    },
+    "csharprepl": {
+      "version": "0.6.7",
+      "commands": [
+        "csharprepl"
+      ],
+      "rollForward": false
+    },
+    "code-butler": {
+      "version": "3.0.2",
+      "commands": [
+        "dotnet-code-butler"
+      ],
+      "rollForward": false
+    },
+    "fsdocs-tool": {
+      "version": "20.0.1",
+      "commands": [
+        "fsdocs"
+      ],
+      "rollForward": false
+    },
+    "paket": {
+      "version": "8.1.0-alpha004",
+      "commands": [
+        "paket"
+      ],
+      "rollForward": false
+    },
+    "easybuild.commitlinter": {
+      "version": "0.1.0",
+      "commands": [
+        "commit-linter"
+      ],
+      "rollForward": false
+    },
+    "husky": {
+      "version": "0.7.1",
+      "commands": [
+        "husky"
+      ],
+      "rollForward": false
+    }
+  }
+}

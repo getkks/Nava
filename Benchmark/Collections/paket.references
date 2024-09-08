@@ -1,0 +1,4 @@
+group Benchmark
+BenchmarkDotNet.Diagnostics.Windows
+group Common
+FSharp.Core

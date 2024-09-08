@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Context.fs" />
+    <Compile Include="Builders/SelectorBuilder.fs" />
+    <Compile Include="Builders/SetterBuilder.fs" />
+    <Compile Include="Builders/StyleBuilder.fs" />
+    <Compile Include="Builders/ControlThemeBuilder.fs" />
+    <Compile Include="Builders/ResourceBuilder.fs" />
+    <Compile Include="Builders/ThemeBuilder.fs" />
+    <Compile Include="Theme.fs" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

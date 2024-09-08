@@ -1,0 +1,9 @@
+group Common
+FSharp.SystemTextJson
+FsToolkit.ErrorHandling
+spectre.console
+StringBuffer
+Zio
+group Fody
+InlineIL.Fody
+LocalsInit.Fody

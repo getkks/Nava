@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <GenerateProgramFile>true</GenerateProgramFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="./Pooled/Collections/Dictionary/BucketingTests.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Nava.Runtime.CS\Nava.Runtime.CS.csproj" />
+    <ProjectReference Include="..\..\Source\Nava.Runtime\Nava.Runtime.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

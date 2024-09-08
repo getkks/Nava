@@ -1,0 +1,6 @@
+group Common
+FSharp.Core
+spectre.console
+group Fody
+InlineIL.Fody
+LocalsInit.Fody

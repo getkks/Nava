@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "process",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"echoCommand": false,
+			"command": [
+				"dotnet",
+			],
+			"args": [
+				"build",
+				"${workspaceFolder}${pathSeparator}Source${pathSeparator}Navika${pathSeparator}Navika.fsproj"
+			],
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"label": "Build: Navika.fsproj",
+			"detail": "Build the Navika.fsproj project using dotnet build",
+			"presentation": {
+				// "echo": true,
+				"reveal": "silent",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false,
+				"close": false,
+				"revealProblems": "onProblem"
+			}
+		}
+	]
+}

@@ -1,0 +1,7 @@
+group Navika
+Avalonia.Diagnostics
+Avalonia.Desktop
+FluentAvalonia.FuncUI.Bindings
+Avalonia.FuncUI.Elmish
+Avalonia.Svg.Skia
+TypeShape

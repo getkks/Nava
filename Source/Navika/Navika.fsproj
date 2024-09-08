@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets/**" />
+    <Compile Include="Reflection/ObjectShape.fs" />
+    <Compile Include="Controls/AutoGrid.fs" />
+    <Compile Include="Forms/FormState.fs" />
+	<Compile Include="Forms/Form.fs" />
+    <Compile Include="MainWindow.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Navika.Theme\Navika.Theme.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

@@ -1,0 +1,104 @@
+group Benchmark
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget BenchmarkDotNet.Diagnostics.Windows
+
+group Common
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget FSharp.Core content: none
+	nuget FSharp.SystemTextJson
+	nuget FsToolkit.ErrorHandling
+	nuget spectre.console
+	nuget StringBuffer
+	nuget Zio
+	nuget FastHashes
+
+group Dcoumentation
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget Ionide.KeepAChangelog.Tasks copy_local:true
+
+group Fody
+    source https://api.nuget.org/v3/index.json
+    framework: net9.0
+    storage: none
+	nuget Fody copy_local:true
+	nuget InfoOf.Fody copy_local:true
+	nuget InlineIL.Fody copy_local:true
+	nuget LocalsInit.Fody copy_local:true
+
+group Nava
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget FSharp.Core content: none
+
+group Nava.Excel.Runtime
+    source https://api.nuget.org/v3/index.json
+    framework: net9.0
+    storage: none
+	nuget FsToolkit.ErrorHandling
+	github MarkPflug/Sylvan.Data.Excel:main source/Sylvan.Data.Excel/Packaging/Ole2Package.cs
+	github MarkPflug/Sylvan.Data.Excel:main source/Sylvan.Data.Excel/Packaging/Ole2Package+Ole2Entry.cs
+	github MarkPflug/Sylvan.Data.Excel:main source/Sylvan.Data.Excel/Packaging/Ole2Package+Ole2Stream.cs
+
+group Nava.Office
+    source https://api.nuget.org/v3/index.json
+    framework: net9.0
+    storage: none
+	nuget FSharp.Core content: none
+
+group Nava.Runtime
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget FSharp.Core content: none
+	nuget FsToolkit.ErrorHandling
+	nuget FastHashes
+	nuget Vanara.PInvoke.Ole
+	nuget Vanara.PInvoke.User32
+
+group Navika
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget Avalonia.Desktop
+	nuget Avalonia.FuncUI.Elmish
+	nuget Avalonia.Svg.Skia
+	nuget FluentAvalonia.FuncUI.Bindings
+	nuget FSharp.Core content: none
+	nuget Avalonia.Diagnostics
+	nuget TypeShape
+
+group Navika.Forms
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget Avalonia.FuncUI.Elmish
+	nuget FSharp.Core content: none
+	nuget FsToolkit.ErrorHandling
+
+group Navika.Theme
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget FSharp.Core content: none
+	nuget FsToolkit.ErrorHandling
+	nuget Avalonia.Desktop
+
+group Tests
+	source https://api.nuget.org/v3/index.json
+	storage: none
+	framework: net9.0
+	nuget FSharp.Core content: none
+	nuget CsCheck
+	nuget FsCheck 3.0.0-rc3 rc
+	nuget FsCheck.Xunit 3.0.0-rc3 rc
+	nuget FsUnit.xUnit
+	nuget coverlet.collector
+	nuget Microsoft.NET.Test.Sdk
+	nuget xunit.runner.visualstudio

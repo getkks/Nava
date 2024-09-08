@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="./Ole2Package/Ole2Stream.fs" />
+    <Compile Include="./RecordReader/RecordType.fs" />
+    <Compile Include="./RecordReader/RecordReader.fs" />
+    <Compile Include="./OpenPackage/Errors.fs" />
+    <Compile Include="./OpenPackage/Relation.fs" />
+    <Compile Include="./OpenPackage/OpenPart.fs" />
+    <Compile Include="./OpenPackage/Worksheet.fs" />
+    <Compile Include="./OpenPackage/Workbook.fs" />
+    <Compile Include="./OpenPackage/OpenPackage.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nava.Runtime\Nava.Runtime.fsproj" />
+    <ProjectReference Include="..\Nava.Excel.Runtime\Nava.Excel.Runtime.csproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

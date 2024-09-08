@@ -1,0 +1,7 @@
+group Common
+FsToolkit.ErrorHandling
+StringBuffer
+Zio
+group Fody
+InlineIL.Fody
+LocalsInit.Fody

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="./OpenPackage/Errors.fs" />
+    <Compile Include="./OpenPackage/Relations.fs" />
+    <Compile Include="./OpenPackage/Types.fs" />
+    <Compile Include="./OpenPackage/OpenPackage.fs" />
+    <Compile Include="./OpenPackage/Workbook/SharedString.fs" />
+    <Compile Include="./OpenPackage/Workbook/Worksheet/CellPosition.fs" />
+    <Compile Include="./OpenPackage/Workbook/Worksheet/Worksheet.fs" />
+    <Compile Include="./OpenPackage/Workbook/Workbook.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nava.Runtime\Nava.Runtime.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

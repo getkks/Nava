@@ -1,0 +1,12 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:ClassModifier="internal">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <MergeResourceInclude Source="avares://Testbed/Theme/Controls/AdornerLayer.axaml" />
+                <MergeResourceInclude Source="avares://Testbed/Theme/Controls/Button.axaml" />
+                <MergeResourceInclude Source="avares://Testbed/Theme/Controls/TitleBar.axaml" />
+                <MergeResourceInclude Source="avares://Testbed/Theme/Controls/Window.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+</Styles>

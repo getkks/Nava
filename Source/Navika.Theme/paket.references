@@ -1,0 +1,7 @@
+group Navika.Theme
+FSharp.Core
+FsToolkit.ErrorHandling
+Avalonia.Desktop
+group Fody
+InlineIL.Fody
+LocalsInit.Fody

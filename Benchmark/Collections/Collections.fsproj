@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="./List/Add.fs" />
+    <Compile Include="./Dictionay/Add.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Configuration\Configuration.fsproj" />
+    <ProjectReference Include="..\..\Source\Nava.Runtime\Nava.Runtime.fsproj" />
+    <ProjectReference Include="..\..\Source\Nava.Runtime.CS\Nava.Runtime.CS.csproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

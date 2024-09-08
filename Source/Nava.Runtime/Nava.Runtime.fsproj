@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Compile Include="./ThrowHelpers.fs" />
+    <Compile Include="./MemoryHelpers.fs" />
+    <Compile Include="./ObjectExtensions.fs" />
+    <Compile Include="./Disposable.fs" />
+	<Compile Include="./COM/Object.fs" />
+	<Compile Include="./Process/Process.fs" />
+	<Compile Include="./FileSystem/TemporaryDirectory.fs" />
+    <Compile Include="./Collections/Seq.fs" />
+    <Compile Include="./Buffers/Pooled/Buffer.fs" />
+    <Compile Include="./Collections/Pooled/List.fs" />
+    <Compile Include="./Collections/Pooled/Entry.fs" />
+    <Compile Include="./Collections/Pooled/Dictionary/ISearchFailure.fs" />
+    <Compile Include="./Collections/Pooled/Dictionary/ISearchSuccess.fs" />
+    <Compile Include="./Collections/Pooled/Dictionary.fs" />
+    <Compile Include="./Collections/Dictionary.fs" />
+    <Compile Include="./Xml/Reader.fs" />
+    <Compile Include="./Zip/ZipExtensions.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nava.Runtime.CS\Nava.Runtime.CS.csproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>
