@@ -1,6 +1,7 @@
 namespace Nava.Runtime.COM
 
 open System
+open Vanara.PInvoke
 open type Vanara.PInvoke.Ole32
 open type Vanara.PInvoke.OleAut32
 
@@ -31,8 +32,7 @@ module Object =
     /// <returns>A sequence of COM objects for the given type.</returns>
     let GetRunningObjects<'T>() =
         match GetRunningObjectTable 0u with
-        | _, null -> "Unable to get Running Object Table." |> Error
-        | _, runningObjectTable ->
+        | hResult, runningObjectTable when hResult = HRESULT.S_OK ->
             match runningObjectTable.EnumRunning() with
             | null -> "Running Object Table did not return IEnumMoniker." |> Error
             | monikerEnumerator ->
@@ -48,3 +48,4 @@ module Object =
                         | _ -> ()
                 }
                 |> Ok
+        | _ -> "Unable to get Running Object Table." |> Error

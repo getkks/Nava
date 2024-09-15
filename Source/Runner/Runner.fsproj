@@ -12,5 +12,27 @@
   <ItemGroup>
     <ProjectReference Include="..\Nava.Office\Nava.Office.fsproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook">
+      <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Microsoft.Office.Interop.Outlook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word">
+      <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Microsoft.Vbe.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="office">
+      <HintPath>$([System.IO.Path]::Combine($(ArtifactsPath), References))\Office.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

@@ -8,9 +8,12 @@ group Common
 	source https://api.nuget.org/v3/index.json
 	storage: none
 	framework: net9.0
+nuget FSharp.Control.AsyncSeq
+nuget FSharp.Control.TaskSeq
 	nuget FSharp.Core content: none
 	nuget FSharp.SystemTextJson
 	nuget FsToolkit.ErrorHandling
+nuget FsToolkit.ErrorHandling.AsyncSeq
 	nuget spectre.console
 	nuget StringBuffer
 	nuget Zio
@@ -20,7 +23,6 @@ group Dcoumentation
 	source https://api.nuget.org/v3/index.json
 	storage: none
 	framework: net9.0
-	nuget Ionide.KeepAChangelog.Tasks copy_local:true
 
 group Fody
     source https://api.nuget.org/v3/index.json
@@ -50,7 +52,10 @@ group Nava.Office
     source https://api.nuget.org/v3/index.json
     framework: net9.0
     storage: none
+	nuget AngleSharp
 	nuget FSharp.Core content: none
+	nuget PDFtoImage
+	nuget SkiaSharp
 
 group Nava.Runtime
 	source https://api.nuget.org/v3/index.json

@@ -4,6 +4,13 @@ FsToolkit.ErrorHandling
 spectre.console
 StringBuffer
 Zio
+FSharp.Control.TaskSeq
+FSharp.Control.AsyncSeq
+FsToolkit.ErrorHandling.AsyncSeq
 group Fody
 InlineIL.Fody
 LocalsInit.Fody
+group Nava.Office
+AngleSharp
+SkiaSharp
+PDFtoImage

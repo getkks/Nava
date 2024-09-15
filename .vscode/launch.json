@@ -14,6 +14,17 @@
 			"cwd": "${workspaceFolder}",
 			"stopAtEntry": false,
 			"console": "integratedTerminal"
+		},
+		{
+			"name": ".NET Core Launch Runner.fsproj",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "Build: Runner.fsproj",
+			"program": "${env:TMP}${pathSeparator}Artifacts${pathSeparator}bin${pathSeparator}Runner${pathSeparator}debug${pathSeparator}Runner.dll",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"stopAtEntry": false,
+			"console": "integratedTerminal"
 		}
 	]
 }

@@ -101,19 +101,12 @@ sealed partial class Ole2Package
 		this.verMinor = reader.ReadUInt16();
 		this.verMajor = reader.ReadUInt16();
 
-		switch (verMajor)
-		{
-			case 3:
-				this.sectorSize = 0x0200;
-				break;
-			case 4:
-				this.sectorSize = 0x1000;
-				break;
-			default:
-				throw new InvalidDataException();//"Invalid Ole2 version."
-		}
-
-		ushort byteOrder = reader.ReadUInt16();
+        this.sectorSize = (Ole2Package.verMajor)verMajor switch {
+            3 => 0x0200,
+            4 => 0x1000,
+            _ => throw new InvalidDataException(),//"Invalid Ole2 version."
+        };
+        ushort byteOrder = reader.ReadUInt16();
 		if (byteOrder != ByteOrder)
 			throw new InvalidDataException();// "Invalid byte order marks."
 

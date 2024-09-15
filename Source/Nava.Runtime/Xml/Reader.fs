@@ -80,7 +80,7 @@ module XmlReader =
             IgnoreWhitespace = true,
             MaxCharactersFromEntities = 0,
             NameTable = defaultNameTable,
-            Schemas = null,
+            Schemas = Schema.XmlSchemaSet defaultNameTable,
             ValidationFlags = Schema.XmlSchemaValidationFlags.None,
             ValidationType = ValidationType.None
         )

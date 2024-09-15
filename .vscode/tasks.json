@@ -30,6 +30,36 @@
 				"close": false,
 				"revealProblems": "onProblem"
 			}
+		},
+		{
+			"type": "process",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"echoCommand": false,
+			"command": [
+				"dotnet",
+			],
+			"args": [
+				"build",
+				"${workspaceFolder}${pathSeparator}Source${pathSeparator}Runner${pathSeparator}Runner.fsproj"
+			],
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"label": "Build: Runner.fsproj",
+			"detail": "Build the Runner.fsproj project using dotnet build",
+			"presentation": {
+				// "echo": true,
+				"reveal": "silent",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false,
+				"close": false,
+				"revealProblems": "onProblem"
+			}
 		}
 	]
 }

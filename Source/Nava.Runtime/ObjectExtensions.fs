@@ -1,4 +1,4 @@
-namespace Nava.Runtime.FS
+namespace Nava.Runtime
 
 #nowarn "1204" "42" "9"
 
@@ -14,18 +14,18 @@ type ObjectExtensions =
 
     //https://github.com/stephan-tolksdorf/fparsec/blob/fdd990ad5abe32fd65d926005b4c7bd71dd2384f/FParsec/Internals.fs#L16
     [<Extension>]
-    static member inline IsNull x = (# "ldnull ceq" x : bool #) //ObjectExtensions.ReferenceEquals(x, null)
+    static member inline IsNull<'T when 'T: null>(x: 'T) = (# "ldnull ceq" x : bool #) //ObjectExtensions.ReferenceEquals(x, null)
 
     //https://github.com/stephan-tolksdorf/fparsec/blob/fdd990ad5abe32fd65d926005b4c7bd71dd2384f/FParsec/Internals.fs#L18
     [<Extension>]
-    static member inline IsNotNull x = (# "ldnull cgt.un" x : bool #) //ObjectExtensions.ReferenceEquals(x, null)|> not
+    static member inline IsNotNull<'T when 'T: null>(x: 'T) = (# "ldnull cgt.un" x : bool #) //ObjectExtensions.ReferenceEquals(x, null)|> not
 
     [<Extension>]
     static member inline IsOfType<'T> object =
         LanguagePrimitives.IntrinsicFunctions.TypeTestFast<'T>(object)
 
     [<Extension>]
-    static member inline As(x: 'T) =
+    static member inline ForceAs<'T, 'U>(x: 'T) =
 
 #if INTERACTIVE
         unbox x

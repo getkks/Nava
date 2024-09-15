@@ -164,31 +164,28 @@ type ExcelApplication(saveOnClose: bool) =
             this.Open(file, options)
 
     member this.Open(inputFile: FileInfo, options) =
-        if isNull inputFile then
-            ArgumentNullException(nameof inputFile) :> Exception |> Error
-        else
-            let noDelimiter = options.Delimiter.IsNone
+        let noDelimiter = options.Delimiter.IsNone
 
-            try
-                this.Workbooks.Open(
-                    inputFile.FullName,
-                    AddToMru = options.AddToRecentFiles,
-                    CorruptLoad =
-                        (match options.Corrupted with
-                         | ValueSome Extract -> XlCorruptLoad.xlExtractData |> box
-                         | ValueSome Repair -> XlCorruptLoad.xlRepairFile |> box
-                         | ValueNone -> Type.Missing),
-                    Delimiter = ExcelApplication.DefaultValue options.Delimiter,
-                    Format = (if noDelimiter then Type.Missing else 6),
-                    IgnoreReadOnlyRecommended = false,
-                    Password = ExcelApplication.DefaultValue options.Password,
-                    ReadOnly = options.ReadOnly,
-                    UpdateLinks = (if options.UpdateLinks then 3 else 0),
-                    WriteResPassword = ExcelApplication.DefaultValue options.WriteReservedPassword
-                )
-                |> Ok
-            with exn ->
-                Error exn
+        try
+            this.Workbooks.Open(
+                inputFile.FullName,
+                AddToMru = options.AddToRecentFiles,
+                CorruptLoad =
+                    (match options.Corrupted with
+                     | ValueSome Extract -> XlCorruptLoad.xlExtractData |> box
+                     | ValueSome Repair -> XlCorruptLoad.xlRepairFile |> box
+                     | ValueNone -> Type.Missing),
+                Delimiter = ExcelApplication.DefaultValue options.Delimiter,
+                Format = (if noDelimiter then Type.Missing else 6),
+                IgnoreReadOnlyRecommended = false,
+                Password = ExcelApplication.DefaultValue options.Password,
+                ReadOnly = options.ReadOnly,
+                UpdateLinks = (if options.UpdateLinks then 3 else 0),
+                WriteResPassword = ExcelApplication.DefaultValue options.WriteReservedPassword
+            )
+            |> Ok
+        with exn ->
+            Error exn
 
     member this.Dispose disposing =
         if disposing then

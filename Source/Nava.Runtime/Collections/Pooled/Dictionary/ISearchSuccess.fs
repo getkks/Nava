@@ -120,7 +120,7 @@ type RemoveSuccessReturnValue<'TStore, 'TKey, 'TValue, 'TStoreAccess when StoreA
 [<Struct; NoComparison; NoEquality>]
 type NoOpSuccess<'TStore, 'TKey, 'TValue, 'TStoreAccess, 'TReturn when StoreAccess<'TStore, 'TKey, 'TValue, 'TStoreAccess>> =
     [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
-    member this.Handle
+    member _.Handle
         (
             key: 'TKey,
             value: 'TValue,
@@ -129,16 +129,13 @@ type NoOpSuccess<'TStore, 'TKey, 'TValue, 'TStoreAccess, 'TReturn when StoreAcce
             entryReference: Entry<'TStore, 'TKey, 'TValue, 'TStoreAccess> byref,
             entriesReference: Entry<'TStore, 'TKey, 'TValue, 'TStoreAccess> byref,
             previousEntryIndex: int
-        ) : 'TReturn =
-        if LanguagePrimitives.PhysicalEquality typeof<'TReturn> typeof<bool> then
-            IL.Push true
-        else
-            IL.Push Unchecked.defaultof<'TReturn>
+        ) : bool =
+        // if LanguagePrimitives.PhysicalEquality typeof<'TReturn> typeof<bool> then
+        //     true.ForceAs<_, 'TReturn>()
+        // else
+        //     Unchecked.defaultof<'TReturn>
+        true
 
-        IL.Emit.Ret()
-        raise(IL.Unreachable())
-
-    interface ISearchSuccess<'TStore, 'TKey, 'TValue, 'TStoreAccess, 'TReturn> with
+    interface ISearchSuccess<'TStore, 'TKey, 'TValue, 'TStoreAccess, bool> with
         [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
-        member this.Handle(key, value, behavior, primaryReference, entryReference, entriesReference, previousEntryIndex) =
-            this.Handle(key, value, behavior, &primaryReference, &entryReference, &entriesReference, previousEntryIndex)
+        member _.Handle(_, _, _, _, _, _, _) = true

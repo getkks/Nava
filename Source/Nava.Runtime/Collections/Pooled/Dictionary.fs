@@ -196,7 +196,7 @@ type DictionaryBase<'TKey, 'TValue, 'TKeyComparer, 'TEntryBuffer, 'TIndexBuffer,
         when OperationSuccess<'TStore, 'TKey, 'TValue, 'TStoreAccess, 'TSuccess, 'TReturn>
         and OperationFailure<'TStore, 'TKey, 'TValue, 'TStoreAccess, 'TFailure, 'TReturn>>
         (key: 'TKey, value: 'TValue, behavior: InsertionBehavior)
-        =
+        : 'TReturn =
         if not typeof<'TKey>.IsValueType then
             ArgumentNullException.ThrowIfNull key
 
@@ -215,7 +215,7 @@ type DictionaryBase<'TKey, 'TValue, 'TKeyComparer, 'TEntryBuffer, 'TIndexBuffer,
             then
                 Unchecked.defaultof<'TSuccess>
                     .Handle(key, value, behavior, &primaryReference, &entry, &entriesReference, previousIndex)
-                |> IL.Push
+                |> IL.Push<'TReturn>
 
                 IL.Emit.Ret()
                 raise(IL.Unreachable())

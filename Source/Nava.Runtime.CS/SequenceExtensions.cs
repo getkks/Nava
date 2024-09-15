@@ -12,10 +12,10 @@ public static class SequenceExtensions {
 	/// <param name="predicate"> The predicate to search for. </param>
 	/// <returns> The first element in the sequence that satisfies the predicate as a <see cref="FSharpValueOption{T}"/> else <see cref="FSharpValueOption{T}.None"/>. </returns>
 	public static FSharpValueOption<T> TryFind<T>(this IEnumerable<T> seq, Func<T, bool> predicate) {
-		if( seq is not null ) {
+		if(seq is not null) {
 			using var enumerator = seq.GetEnumerator();
-			while( enumerator.MoveNext() ) {
-				if( predicate(enumerator.Current) ) {
+			while(enumerator.MoveNext()) {
+				if(predicate(enumerator.Current)) {
 					return FSharpValueOption<T>.Some(enumerator.Current);
 				}
 			}
